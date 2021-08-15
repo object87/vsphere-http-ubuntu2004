@@ -17,5 +17,5 @@
   "iso_paths": "[ds2-local-esxi01] isos/ubuntu-20.04.2-live-server-amd64.iso",
   "ssh_username": "ubuntu",
   "ssh_password": "ubuntu",
-  "developer_notes": "Testing git trigger"
+  "developer_notes": "Testing git trigger crap"
 }
