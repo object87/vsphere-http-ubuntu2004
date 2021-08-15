@@ -19,6 +19,7 @@
       "convert_to_template": "true",
       "create_snapshot": "false",
       "datacenter": "{{user `vcenter_datacenter`}}",
+      "cluster": "{{user `vcenter_cluster` }}",
       "datastore": "{{user `vcenter_datastore`}}",
       "disk_controller_type": "pvscsi",
       "folder": "{{user `vcenter_folder`}}",
