@@ -21,7 +21,7 @@ autoinstall:
     apt:
         primary:
             - arches: [i386, amd64]
-              uri: "http://ro.archive.ubuntu.com/ubuntu/"
+              uri: "http://us.archive.ubuntu.com/ubuntu/"
     user-data:
       disable_root: false
     late-commands:

@@ -6,16 +6,27 @@
       "RAM_reserve_all": true,
       "firmware": "bios",
       "boot_command": [
-        "<esc><esc><esc>",
-        "<enter><wait>",
-        "/install/vmlinuz<wait>",
-        " initrd=/install/initrd.gz",
-        " auto-install/enable=true",
-        " debconf/priority=critical",
-        " preseed/url=http://192.168.1.96:8080/preseed.cfg<wait>",
-        " -- <wait>",
-         "<enter>,<wait>"
+          # Make the language selector appear...
+          " <up><wait>",
+          # ...then get rid of it
+          " <up><wait><esc><wait>",
+
+          # Go to the other installation options menu and leave it
+          "<f6><wait><esc><wait>",
+
+          # Remove the kernel command-line that already exists
+          "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>"<bs><bs>",
+          "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+          "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+
+          # Add kernel command-line and start install
+          "/casper/vmlinuz ",
+          "initrd=/casper/initrd ",
+          "autoinstall ",
+          "ds=nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/user-data ",
+          "<enter>"
       ],
+      "http_directory": "http",
       "boot_wait": "2s",
       "convert_to_template": "true",
       "create_snapshot": "false",
