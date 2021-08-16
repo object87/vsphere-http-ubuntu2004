@@ -6,20 +6,12 @@
       "RAM_reserve_all": true,
       "firmware": "bios",
       "boot_command": [
-          # Make the language selector appear...
           " <up><wait>",
-          # ...then get rid of it
           " <up><wait><esc><wait>",
-
-          # Go to the other installation options menu and leave it
           "<f6><wait><esc><wait>",
-
-          # Remove the kernel command-line that already exists
           "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>"<bs><bs>",
           "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
           "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
-
-          # Add kernel command-line and start install
           "/casper/vmlinuz ",
           "initrd=/casper/initrd ",
           "autoinstall ",
