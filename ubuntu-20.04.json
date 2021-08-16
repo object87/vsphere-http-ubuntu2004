@@ -12,37 +12,36 @@
          "root=/dev/sr0 ",
          "initrd=/casper/initrd ",
          "autoinstall ",
-         "ds=nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/",
+         "ds=nocloud-net;s=http://192.168.1.96:8080/preseed.cfg",
          "<enter>"
       ],
       "boot_wait": "2s",
       "convert_to_template": "true",
       "create_snapshot": "false",
-      "datacenter": "{{user `vcenter_datacenter`}}",
-      "cluster": "{{user `vcenter_cluster` }}",
-      "datastore": "{{user `vcenter_datastore`}}",
+      "datacenter": "Datacenter87",
+      "cluster": "CL01",
+      "datastore": "ds2-local-esxi01",
       "disk_controller_type": "pvscsi",
-      "folder": "{{user `vcenter_folder`}}",
+      "folder": "Templates",
       "guest_os_type": "ubuntu64Guest",
-      "host": "{{user `vcenter_host`}}",
-      "http_directory": "{{user `http_directory`}}",
+      "host": "192.168.1.11",
       "insecure_connection": "true",
-      "iso_checksum": "{{user `iso_checksum_type`}}:{{user `iso_checksum`}}",
-      "iso_paths": "{{user `iso_paths`}}",
+      "iso_checksum": "md5:aba7e22636c435c5008f5d059ae69a62",
+      "iso_paths": "[ds2-local-esxi01] isos/ubuntu-20.04-live-server-amd64.iso",
       "name": "Ubuntu-20.04",
       "network_adapters": [
         {
-          "network": "{{user `vcenter_network`}}",
+          "network": "VM Network",
           "network_card": "vmxnet3"
         }
       ],
-      "notes": "Default SSH User: {{user `ssh_username`}}\nDefault SSH Pass: {{user `ssh_password`}}\nBuilt by Packer @ {{isotime \"2006-01-02 03:04\"}}.",
-      "password": "{{user `vcenter_password`}}",
+      "notes": "Default SSH User: ubuntu\nDefault SSH Pass: ubuntu\nBuilt by Packer @ {{isotime \"2006-01-02 03:04\"}}.",
+      "password": "!Pr0rery",
       "shutdown_command": "echo 'ubuntu'|sudo -S shutdown -P now",
-      "ssh_password": "{{user `ssh_password`}}",
+      "ssh_password": "ubuntu",
       "ssh_timeout": "20m",
       "ssh_handshake_attempts": "100000",
-      "ssh_username": "{{user `ssh_username`}}",
+      "ssh_username": "ubuntu",
       "storage": [
         {
           "disk_size": 20480,
@@ -50,9 +49,9 @@
         }
       ],
       "type": "vsphere-iso",
-      "username": "{{user `vcenter_username`}}",
-      "vcenter_server": "{{user `vcenter_server`}}",
-      "vm_name": "{{user `vm_name`}}"
+      "username": "administrator@laboratory87.com",
+      "vcenter_server": "192.168.1.248",
+      "vm_name": "U2004-Server-Template"
     }
   ],
   "provisioners": [
