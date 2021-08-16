@@ -6,8 +6,7 @@
       "RAM_reserve_all": true,
       "firmware": "bios",
       "boot_command": [
-        "<esc><wait>",
-        "<esc><wait>",
+        "<esc><esc><esc>",
         "<enter><wait>",
         "/install/vmlinuz<wait>",
         " initrd=/install/initrd.gz",
