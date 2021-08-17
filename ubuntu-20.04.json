@@ -12,10 +12,9 @@
          "root=/dev/sr0 ",
          "initrd=/casper/initrd ",
          "autoinstall ",
-         "ds=nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/",
+         "preseed/url=http://192.168.1.93:8081/preseed.cfg",
          "<enter>"
      ],
-      "http_directory": "./http",
       "boot_wait": "2s",
       "convert_to_template": "true",
       "create_snapshot": "false",
