@@ -30,8 +30,8 @@
       "guest_os_type": "ubuntu64Guest",
       "host": "192.168.1.11",
       "insecure_connection": "true",
-      "iso_checksum": "md5:aba7e22636c435c5008f5d059ae69a62",
-      "iso_paths": "[ds2-local-esxi01] isos/ubuntu-20.04.2-live-server-amd64.iso",
+      "iso_checksum": "md5:fcd77cd8aa585da4061655045f3f0511",
+      "iso_paths": "[ds2-local-esxi01] isos/ubuntu-18.04.5-live-server-amd64.iso",
       "name": "Ubuntu-20.04",
       "network_adapters": [
         {
