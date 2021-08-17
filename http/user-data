@@ -3,7 +3,8 @@ autoinstall:
     version: 1
     early-commands:
         # Stop ssh for packer
-        - sudo systemctl stop ssh
+        # - sudo systemctl stop ssh
+        - iptables -A INPUT -p tcp --dport 22 -j DROP
     packages:
         - open-vm-tools
         - openssh-server
