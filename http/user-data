@@ -4,12 +4,10 @@ autoinstall:
     early-commands:
         # Stop ssh for packer
         # - sudo systemctl stop ssh
-        - iptables -A INPUT -p tcp --dport 22 -j DROP
+        # - iptables -A INPUT -p tcp --dport 22 -j DROP
     packages:
         - open-vm-tools
-        - openssh-server
         - unzip
-        - wget
 
     locale: en_US
     keyboard:
@@ -20,7 +18,7 @@ autoinstall:
         username: ubuntu
         password: '$6$rounds=4096$NYG7e8HxIMgz1$BqP28Ppt0FqXiBQuiE6PxiVBJJJAbm8tJrNz4HC7MEC.7Gv/eOyQIfaLqZ6W6fnMMtxP.BYfHmTBxUFQQs0u91'
     ssh:
-        install-server: no
+        install-server: yes
         allow-pw: yes
     storage:
         layout:
