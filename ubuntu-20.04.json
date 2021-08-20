@@ -6,6 +6,7 @@
       "RAM_reserve_all": true,
       "firmware": "bios",
       "boot_command": [
+
          "<esc><esc><esc>",
          "<enter><wait>",
          "/casper/vmlinuz ",
